@@ -1,0 +1,39 @@
+{
+  "ruangan": {
+    "ruangan1": {
+      "nomor": "E101",
+      "kapasitas": 30,
+      "nama": "Ruang Mengajar"
+    },
+    "ruangan2": {
+      "nomor": "E102",
+      "kapasitas": 45,
+      "nama": "Ruang Komputer"
+    },
+    "ruangan3": {
+      "nomor": "E103",
+      "kapasitas": 45,
+      "nama": "Ruang Belajar"
+    },
+    "ruangan4": {
+      "nomor": "E104",
+      "kapasitas": 45,
+      "nama": "Ruang Belajar"
+    },
+    "ruangan5": {
+      "nomor": "E105",
+      "kapasitas": 30,
+      "nama": "Ruang Belajar"
+    },
+    "ruangan6": {
+      "nomor": "E106",
+      "kapasitas": 70,
+      "nama": "Ruang Belajar"
+    },
+    "ruangan7": {
+      "nomor": "E107",
+      "kapasitas": 70,
+      "nama": "Ruang Belajar"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <NavigationButton tap="onBackButtonTap" android.systemIcon="ic_menu_back" />
+        <Label text="{{ ruangan.nama }}" horizontalAlignment="center" />
+        <ActionItem tap="onEditButtonTap" ios.position="right" android.position="right">
+            <Label text="Edit" verticalAlignment="center" />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout>
+        <ScrollView>
+            <GridLayout rows="auto, auto, auto">
+                <StackLayout row="1" class="hr m-y-15" />
+
+                <GridLayout row="2" rows="*, *, *, *, *, *" columns="auto, auto">
+                    <Label text="Kapasitas" class="p-l-15 p-b-10 m-r-20" />
+                    <Label col="1" class="p-b-10">
+                        <FormattedString>
+                            <Span text="{{ ruangan.kapasitas }}" />
+                            <Span text=" orang" />
+                        </FormattedString>
+                    </Label>
+
+                    <Label text="Nomor" row="1" class="p-l-15 p-b-10 m-r-20" />
+                    <Label text="{{ ruangan.nomor }}" row="1" col="1" class="p-b-10" />
+
+                    <Label text="Nama Ruangan" row="2" class="p-l-15 p-b-10 m-r-20" />
+                    <Label text="{{ ruangan.nama }}" row="2" col="1" class="p-b-10" />
+
+                </GridLayout>
+            </GridLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>

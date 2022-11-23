@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "251674803857",
+    "project_id": "fsm-room-app",
+    "storage_bucket": "fsm-room-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251674803857:android:09199a5519014a7b380930",
+        "android_client_info": {
+          "package_name": "com.ns.fsmapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251674803857-loqv92gv4tvnsc4pbfru5i7l04n4nnlf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0DGTCd96gcJFK6BGBqR3hlpJII3iNqKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251674803857-loqv92gv4tvnsc4pbfru5i7l04n4nnlf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

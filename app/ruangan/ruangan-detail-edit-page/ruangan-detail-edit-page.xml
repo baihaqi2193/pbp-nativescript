@@ -1,0 +1,110 @@
+<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <!-- HACK - we should remove the navigation button -->
+        <NavigationButton visibility="collapsed" />
+        <Label text="Edit Ruangan" horizontalAlignment="center" />
+        <ActionItem tap="onCancelButtonTap" android.position="left">
+            <Label text="Batal" verticalAlignment="center" />
+        </ActionItem>
+        <ActionItem ios.position="right">
+            <Label
+                text="Selesai"
+                verticalAlignment="center"
+                tap="onDoneButtonTap"
+                isEnabled="{{ ruangan.isModelValid }}"
+                isUserInteractionEnabled="{{ ruangan.isModelValid }}"
+            />
+        </ActionItem>
+    </ActionBar>
+
+    <GridLayout>
+        <ScrollView>
+            <StackLayout class="ruangan-list">
+                <Label text="NAMA RUANGAN" class="ruangan-list-odd" />
+                <TextField
+                    text="{{ ruangan.nama }}"
+                    hint="Nama ruangan is required"
+                    class="{{ ruangan.nama, ruangan.nama ? 'ruangan-list-even' : 'ruangan-list-even placeholder-error' }}"
+                />
+
+                <Label text="NOMOR RUANGAN" class="ruangan-list-odd" />
+                <TextField
+                    text="{{ ruangan.nomor }}"
+                    hint="Nomor ruangan is required"
+                    class="{{ ruangan.nomor, ruangan.nomor ? 'ruangan-list-even' : 'ruangan-list-even placeholder-error' }}"
+                />
+
+                <GridLayout rows="*, 55, *" columns="*, auto" class="ruangan-list-odd">
+                    <Label text="KAPASITAS" />
+                    <Label col="1" horizontalAlignment="right" class="ruangan-list__value">
+                        <FormattedString>
+                            <Span text="{{ ruangan.kapasitas }}" />
+                            <Span text=" orang" />
+                        </FormattedString>
+                    </Label>
+
+                    <StackLayout row="1" colSpan="2" verticalAlignment="center">
+                        <Slider value="{{ ruangan.kapasitas, ruangan.kapasitas | roundingValueConverter }}" />
+                    </StackLayout>
+
+                </GridLayout>
+
+                <!-- <StackLayout class="car-list-even">
+                    <GridLayout
+            height="80"
+            width="80"
+            class="thumb"
+            horizontalAlignment="left"
+            backgroundImage="{{ car.imageUrl }}"
+            tap="onImageAddRemoveTap"
+          >
+                        <GridLayout
+              class="thumb__add"
+              visibility="{{ car.imageUrl, car.imageUrl | visibilityValueConverter }}"
+            >
+                            <Label
+                text="&#xf030;"
+                class="fas"
+                horizontalAlignment="center"
+                verticalAlignment="center"
+              />
+                        </GridLayout>
+                        <GridLayout
+              class="thumb__remove"
+              visibility="{{ car.imageUrl, !car.imageUrl | visibilityValueConverter }}"
+            >
+                            <Label
+                text="&#xf2ed;"
+                class="far"
+                horizontalAlignment="center"
+                verticalAlignment="center"
+              />
+                        </GridLayout>
+                    </GridLayout>
+                    <Label
+            visibility="{{ car.imageUrl, car.imageUrl | visibilityValueConverter }}"
+            class="c-error"
+            text="Image field is required"
+          />
+                </StackLayout> -->
+
+                <!-- <Label text="NAMA" class="ruangan-list-odd" />
+                <GridLayout columns="*, auto" tap="onSelectorTap" tag="class" class="ruangan-list-even">
+                    <Label text="{{ ruangan.class }}" />
+                    <Label
+            text="&#xf054;"
+            class="fas"
+            col="1"
+            horizontalAlignment="center"
+            verticalAlignment="center"
+          />
+                </GridLayout> -->
+
+
+            </StackLayout>
+        </ScrollView>
+
+        <ActivityIndicator busy="{{ isUpdating }}" />
+    </GridLayout>
+</Page>

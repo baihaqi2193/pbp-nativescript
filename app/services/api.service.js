@@ -1,4 +1,4 @@
-import db from "./car-rental-export-public.json"
+import db from "./ruangan-export-public.json"
 
 class ApiService {
   constructor() {
@@ -6,19 +6,15 @@ class ApiService {
   }
 
   update(path, updateModel) {
-    const carId = path.split("/").slice(-1)[0];
-    this.db.cars[carId] = {...this.db.cars[carId], ...updateModel }
-  }
-
-  uploadFile(params) {
-    return {url: params.localFullPath}
+    const nomor = path.split("/").slice(-1)[0];
+    this.db.ruangan[nomor] = {...this.db.ruangan[nomor], ...updateModel }
   }
 
   addValueEventListener(onValueEvent, path) {
-    onValueEvent(this.db.cars)
+    onValueEvent(this.db.ruangan)
     return {
       path: path,
-      listeners: this.db.cars
+      listeners: this.db.ruangan
     }
 
   }

@@ -1,0 +1,56 @@
+<Page
+  navigatingTo="onNavigatingTo"
+  xmlns:lv="nativescript-ui-listview"
+  xmlns="http://schemas.nativescript.org/tns.xsd"
+>
+
+    <ActionBar>
+        <!-- Should remove the navigation button -->
+        <Label text="FSM Room App" horizontalAlignment="center" />
+    </ActionBar>
+
+    <GridLayout>
+        <lv:RadListView items="{{ ruangan }}" itemTap="onRuanganItemTap" class="ruangan-list">
+            <lv:RadListView.listViewLayout>
+                <lv:ListViewLinearLayout scrollDirection="Vertical" />
+            </lv:RadListView.listViewLayout>
+
+            <lv:RadListView.itemTemplate>
+                <StackLayout class="ruangan-list__item">
+
+                    <GridLayout rows="*, *, *" columns="*, *" class="ruangan-list__item-content">
+                        <Label text="{{ nomor }}" class="font-weight-bold ruangan-list__item-name" />
+                        <Label col="1" horizontalAlignment="right">
+                        </Label>
+
+
+                        <StackLayout col="1" verticalAlignment="center">
+                            <Label class="p-b-10">
+                                <FormattedString>
+                                    
+                                    <Span text="{{ nomor }}" />
+                                </FormattedString>
+                            </Label>
+                            <Label class="p-b-10">
+                                <FormattedString>
+                                    
+                                    <Span text="{{ nama }}" />
+                                </FormattedString>
+                            </Label>
+                            <Label class="p-b-10">
+                                <FormattedString>
+                                    
+                                    <Span text="{{ kapasitas }}" />
+                                    <Span text=" orang" />
+                                </FormattedString>
+                            </Label>
+                        </StackLayout>
+                    </GridLayout>
+
+                </StackLayout>
+            </lv:RadListView.itemTemplate>
+        </lv:RadListView>
+
+        <ActivityIndicator busy="{{ isLoading }}" />
+    </GridLayout>
+</Page>
